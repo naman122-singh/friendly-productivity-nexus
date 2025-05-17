@@ -289,9 +289,11 @@ const Notes = () => {
                   {searchQuery ? "Try adjusting your search terms." : "Create your first note to get started."}
                 </p>
                 {!searchQuery && (
-                  <DialogTrigger asChild>
-                    <Button onClick={() => setDialogOpen(true)}>Create Note</Button>
-                  </DialogTrigger>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button onClick={() => setDialogOpen(true)}>Create Note</Button>
+                    </DialogTrigger>
+                  </Dialog>
                 )}
               </div>
             ) : (
