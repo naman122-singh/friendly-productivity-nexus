@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -143,9 +144,9 @@ const News = () => {
       }, 1000);
     } catch (error) {
       console.error("Error fetching news:", error);
-      toast({
-        title: "Error",
-        description: "Failed to fetch news articles. Please try again later.",
+      // Fix the toast call - passing a configuration object instead of directly setting properties
+      toast("Failed to fetch news articles. Please try again later.", {
+        description: "Network error or API issue",
       });
       setLoading(false);
     }
